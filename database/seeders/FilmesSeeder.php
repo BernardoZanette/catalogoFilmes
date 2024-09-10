@@ -17,7 +17,7 @@ class FilmesSeeder extends Seeder
             [
                 'nome' => 'nomeTeste',
                 'sinopse' => 'sinopseTeste',
-                'ano' => 'anoTeste',
+                'ano' => '2020',
                 'categoria' => 'categoriaTeste',
                 'capa' => 'capaTeste',
                 'trailer' => 'teste.com'

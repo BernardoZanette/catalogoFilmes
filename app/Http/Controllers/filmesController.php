@@ -15,6 +15,13 @@ class FilmesController extends Controller
         ]);
     }
 
+    public function show ($id) {
+        $filme = Filme::find($id);
+        return view('filmes.show', [
+            'filme' => $filme,
+        ]);
+    }
+
     public function cadastrar() {
         return view('filmes.cadastrar');
     }
@@ -29,7 +36,10 @@ class FilmesController extends Controller
             'capa' => 'required',
             'trailer' => 'required'
         ]);
+        $path = $form->file('capa')->store('filmes', 'imagens');
 
+        $dados['capa'] = $path;
+        
         Filme::create($dados);
         
         return redirect()->route('filmes');

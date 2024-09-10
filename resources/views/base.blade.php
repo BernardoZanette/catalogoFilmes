@@ -32,7 +32,7 @@
             </button> --}}
         </div>
         <nav class="text-white text-base font-semibold pt-3">
-            <a href="{{ route ('index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ route ('index')}}" class="flex items-center active-nav-link text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-home mr-3"></i>
                 Inicial
             </a>
@@ -129,7 +129,7 @@
             <main class="w-full flex-grow p-6">
                 <h1 class="text-3xl text-black pb-6">@yield('titulo')</h1>
 
-                <div class="flex flex-wrap">
+                <div class="flex flex-wrap w-[70vw]">
 
                 <div class="leading-loose min-w-full mb-2">
                     @if(session('erro'))
@@ -147,7 +147,6 @@
                 
                 <div class="leading-loose">
                     @yield('conteudo')
-                </div>
                 </div>
             </main>
     

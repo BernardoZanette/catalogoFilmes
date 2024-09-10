@@ -13,32 +13,21 @@
     <p class="text-xl pb-3 flex items-center">
         <i class="fas fa-list mr-3"></i> Veja nossa lista de filmes
     </p>
-    <div class="bg-white overflow-auto">
-        <table class="min-w-full bg-white">
-            <thead class="bg-gray-800 text-white">
-                <tr>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Sinopse</th>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Ano</th>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Categoria</th>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Capa</th>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Trailer</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Botão</th>
-                </tr>
-            </thead>
-            <tbody class="text-gray-700">
-                @foreach ($filmes as $filme)
-                    <tr @if ($loop->even) class="bg-gray-200" @endif>
-                        <td class="w-1/3 text-left py-3 px-4">{{ $filme['nome'] }}</td>
-                        <td class="w-1/3 text-left py-3 px-4">{{ $filme['Sinopse'] }}</td>
-                        <td class="w-1/3 text-left py-3 px-4">{{ $filme['Ano'] }}</td>
-                        <td class="w-1/3 text-left py-3 px-4">{{ $filme['categoria'] }}</td>
-                        <td class="w-1/3 text-left py-3 px-4">{{ $filme['capa'] }}</td>
-                        <td class="w-1/3 text-left py-3 px-4">{{ $filme['trailer'] }}</td>
-                        <td class="text-left py-3 px-4"><a class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded" href="{{ route('animais.apagar', $filme['id']) }}">Apagar</a></td>
-                    </tr>
-                </tbody>
+    <div class="overflow-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+            @foreach ($filmes as $filme)
+                    <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                        <a href={{route ('filmes.mostrar', ['id' => $filme['id']])}}>
+                            <img src="img/{{ $filme['capa'] }}" alt="{{ $filme['nome'] }}" class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h2 class="text-xl font-bold mb-2">{{ $filme['nome'] }}</h2>
+                                <p class="text-gray-600 mb-2"><strong>Ano:</strong> {{ $filme['ano'] }}</p>
+                                <p class="text-gray-600 mb-2"><strong>Categoria:</strong> {{ $filme['categoria'] }}</p>
+                                <a class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 border border-red-500 hover:border-transparent rounded" href="{{ route('filmes.apagar', $filme['id']) }}">Apagar</a>
+                            </div>
+                        </a>
+                    </div>
             @endforeach
-        </table>
+        </div>
     </div>
 @endsection

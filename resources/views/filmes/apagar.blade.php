@@ -7,7 +7,7 @@
 <p>Tem certeza que quer apagar?</p>
 <p><em>{{ $filme['nome'] }}</em></p>
 
-<form action="{{ route('Filmes.apagar', $filme['id']) }}" method="post">
+<form action="{{ route('filmes.apagar', $filme['id']) }}" method="post">
 @method('delete')
 @csrf
 

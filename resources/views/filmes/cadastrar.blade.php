@@ -36,8 +36,8 @@
         <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="capa" name="capa" type="file" aria-label="capa">
     </div>
     <div class="mt-2">
-        <label class="block text-sm text-gray-600" for="trailler">Trailer</label>
-        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="trailler" value="{{ old('trailler') }}" name="trailler" type="text" aria-label="trailler">
+        <label class="block text-sm text-gray-600" for="trailer">Trailer</label>
+        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="trailer" value="{{ old('trailer') }}" name="trailer" type="text" aria-label="trailer">
     </div>
     <div class="mt-6">
         <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit" value="Gravar">Gravar</button>
