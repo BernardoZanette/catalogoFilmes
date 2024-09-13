@@ -15,12 +15,12 @@ class FilmesSeeder extends Seeder
     {
         DB::table('filmes')->insert([
             [
-                'nome' => 'nomeTeste',
-                'sinopse' => 'sinopseTeste',
+                'nome' => 'Filme de ação',
+                'sinopse' => 'Filme muito loco. Tiro, porrada e bomba.',
                 'ano' => '2020',
-                'categoria' => 'categoriaTeste',
-                'capa' => 'capaTeste',
-                'trailer' => 'teste.com'
+                'categoria' => 'Ação',
+                'capa' => 'capaTeste.jpg',
+                'trailer' => 'https://www.youtube.com/'
             ]
         ]);
     }

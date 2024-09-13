@@ -12,7 +12,7 @@ Route::get('/filmes', [FilmesController::class, 'index'])->name('filmes');
 
 Route::get('/filmes/cadastrar', [FilmesController::class, 'cadastrar'])->name('filmes.cadastrar');
 
-Route::get('/filmes/cadastrar', [FilmesController::class, 'cadastrar'])->name('filmes.cadastrar');
+Route::post('/filmes/gravar', [FilmesController::class, 'gravar'])->name('filmes.gravar');
 
 Route::get('/filmes/apagar/{filme}', [FilmesController::class, 'apagar'])->name('filmes.apagar');
 
@@ -20,10 +20,9 @@ Route::delete('/filmes/apagar/{filme}', [FilmesController::class, 'deletar']);
 
 Route::get('/filmes/editarView/{filme}',[FilmesController::class, 'editarView'])->name('filmes.editarView');
 
-Route::put('/filmes/editar/{filme}',[FilmesController::class, 'editar'])->name('filmes.editar');
+Route::put('/filmes/editar/{id}', [FilmesController::class, 'editar'])->name('filmes.editar');
 
 Route::get('/filmes/{id}', [FilmesController::class, 'show'])->name('filmes.mostrar');
-
 
 Route::prefix('usuarios')->middleware('auth')->group(function() {
     Route::get('/', [UsuariosController::class, 'index'])->name('usuarios');

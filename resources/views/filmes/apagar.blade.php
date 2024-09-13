@@ -8,12 +8,12 @@
 <p><em>{{ $filme['nome'] }}</em></p>
 
 <form action="{{ route('filmes.apagar', $filme['id']) }}" method="post">
-@method('delete')
-@csrf
+    @method('delete')
+    @csrf
 
-<input type="submit" value="Pode apagar sem medo"  class="mb-4 bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+    <input type="submit" value="Pode apagar sem medo"  class="mb-4 bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
 
 </form>
 
-<a class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded" href="{{ route('filmes') }}">Cancelar</a>
+<a class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded" href="{{ route('filmes.mostrar', $filme['id']) }}">Cancelar</a>
 @endsection

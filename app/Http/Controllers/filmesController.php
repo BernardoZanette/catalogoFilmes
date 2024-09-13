@@ -22,13 +22,6 @@ class FilmesController extends Controller
         ]);
     }
 
-    public function editarView ($id) {
-        $filme = Filme::find($id);
-        return view('filmes.editarView', [
-            'filme' => $filme,
-        ]);
-    }
-
     public function cadastrar() {
         return view('filmes.cadastrar');
     }
@@ -50,6 +43,30 @@ class FilmesController extends Controller
         Filme::create($dados);
         
         return redirect()->route('filmes');
+    }
+
+    public function editarView ($id) {
+        $filme = Filme::find($id);
+        return view('filmes.editarView', [
+            'filme' => $filme,
+        ]);
+    }
+    
+    public function editar(Request $form, $id) {
+        $filme = Filme::find($id);
+
+
+        $dados = $form->validate([
+            'nome' => 'required|min:3',
+            'sinopse' => 'required',
+            'ano' => 'required|integer',
+            'categoria' => 'required',
+            'trailer' => 'required'
+        ]);
+            
+        $filme->update($dados);
+    
+        return redirect()->route('filmes.mostrar', $id);
     }
 
     public function apagar(Filme $filme) {

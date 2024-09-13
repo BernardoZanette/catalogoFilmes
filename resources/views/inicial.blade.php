@@ -5,5 +5,5 @@
 @section('titulo', 'Página inicial')
 
 @section('conteudo')
-<p>Sejam bem-vindos à página inicial do início</p>
+<p>Confira já nosso catálogo de filmes!</p>
 @endsection
