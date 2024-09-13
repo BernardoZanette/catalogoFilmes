@@ -22,6 +22,13 @@ class FilmesController extends Controller
         ]);
     }
 
+    public function editarView ($id) {
+        $filme = Filme::find($id);
+        return view('filmes.editarView', [
+            'filme' => $filme,
+        ]);
+    }
+
     public function cadastrar() {
         return view('filmes.cadastrar');
     }

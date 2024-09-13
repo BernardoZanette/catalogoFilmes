@@ -23,6 +23,7 @@
                                 <h2 class="text-xl font-bold mb-2">{{ $filme['nome'] }}</h2>
                                 <p class="text-gray-600 mb-2"><strong>Ano:</strong> {{ $filme['ano'] }}</p>
                                 <p class="text-gray-600 mb-2"><strong>Categoria:</strong> {{ $filme['categoria'] }}</p>
+                                <a class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 border border-yellow-500 hover:border-transparent rounded" href="{{ route('filmes.editarView', $filme['id']) }}">Editar</a>
                                 <a class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 border border-red-500 hover:border-transparent rounded" href="{{ route('filmes.apagar', $filme['id']) }}">Apagar</a>
                             </div>
                         </a>

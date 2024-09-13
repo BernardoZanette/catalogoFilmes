@@ -30,5 +30,4 @@
         <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit" value="Entrar">Entrar</button>
     </div>
 </form>
-
 @endsection
